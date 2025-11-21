@@ -1,0 +1,162 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-display: "Space Grotesk", sans-serif;
+  --font-body: "Manrope", sans-serif;
+
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --color-fog-white: hsl(30 20% 98%); /* Morning fog */
+  --color-fog-rose: hsl(6 30% 94%);
+  --color-fog-lavender: hsl(250 20% 96%);
+  
+  --color-dream-rose: hsl(5 40% 85%);
+  --color-dream-lavender: hsl(260 30% 85%);
+  --color-dream-beige: hsl(35 40% 88%);
+  --color-dream-blue: hsl(210 30% 88%);
+
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
+  
+  --animate-breathe: breathe 4s ease-in-out infinite;
+  --animate-drift: drift 10s ease-in-out infinite;
+  
+  @keyframes breathe {
+    0%, 100% { transform: scale(1); opacity: 0.9; }
+    50% { transform: scale(1.03); opacity: 1; }
+  }
+  
+  @keyframes drift {
+    0% { transform: translate(0, 0); }
+    33% { transform: translate(10px, -10px); }
+    66% { transform: translate(-5px, 5px); }
+    100% { transform: translate(0, 0); }
+  }
+}
+
+/* LIGHT MODE - Dreamy Palette */
+:root {
+  /* Background: very soft off-white with a subtle warm tint ("morning fog") */
+  --background: 30 15% 97%; 
+  
+  /* Text: dark warm gray, no harsh blacks */
+  --foreground: 30 10% 25%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 30 10% 25%;
+  
+  --popover: 0 0% 100%;
+  --popover-foreground: 30 10% 25%;
+
+  /* Primary: Muted dreamy tone (e.g., soft lavender/rose mix) */
+  --primary: 260 20% 65%;
+  --primary-foreground: 0 0% 100%;
+  
+  /* Secondary: Pale warm beige */
+  --secondary: 35 30% 92%;
+  --secondary-foreground: 30 10% 30%;
+  
+  /* Muted: Very subtle gray/beige */
+  --muted: 30 10% 92%;
+  --muted-foreground: 30 10% 50%;
+  
+  /* Accent: Soft dreamy rose */
+  --accent: 5 40% 92%;
+  --accent-foreground: 5 30% 30%;
+  
+  --destructive: 0 50% 90%;
+  --destructive-foreground: 0 60% 40%;
+
+  --border: 30 10% 90%;
+  --input: 30 10% 90%;
+  --ring: 260 20% 80%;
+
+  --radius: 1rem;
+}
+
+.dark {
+  /* Dark mode equivalent - Deep soft navy/purple */
+  --background: 260 20% 12%;
+  --foreground: 30 10% 90%;
+  
+  --card: 260 20% 16%;
+  --card-foreground: 30 10% 90%;
+  
+  --popover: 260 20% 16%;
+  --popover-foreground: 30 10% 90%;
+  
+  --primary: 260 30% 70%;
+  --primary-foreground: 260 20% 10%;
+  
+  --secondary: 260 20% 20%;
+  --secondary-foreground: 30 10% 80%;
+  
+  --muted: 260 20% 20%;
+  --muted-foreground: 260 10% 60%;
+  
+  --accent: 260 20% 25%;
+  --accent-foreground: 30 10% 90%;
+  
+  --destructive: 0 40% 30%;
+  --destructive-foreground: 0 40% 90%;
+  
+  --border: 260 20% 25%;
+  --input: 260 20% 25%;
+  --ring: 260 30% 50%;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply font-body antialiased bg-background text-foreground;
+    background-image: 
+      radial-gradient(at 0% 0%, hsla(5, 30%, 94%, 0.5) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, hsla(250, 20%, 96%, 0.5) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, hsla(35, 40%, 92%, 0.5) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, hsla(210, 30%, 94%, 0.5) 0px, transparent 50%);
+    background-attachment: fixed;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-medium tracking-tight;
+  }
+}
+
+/* Utility for soft glass effect */
+.glass-panel {
+  @apply bg-white/40 backdrop-blur-xl border border-white/20 shadow-sm;
+}
+
+.dark .glass-panel {
+  @apply bg-black/20 backdrop-blur-xl border border-white/5 shadow-sm;
+}

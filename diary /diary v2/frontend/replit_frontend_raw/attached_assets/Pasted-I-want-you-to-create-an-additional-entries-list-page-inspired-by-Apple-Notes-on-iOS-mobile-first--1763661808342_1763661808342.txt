@@ -1,0 +1,230 @@
+I want you to create an additional entries list page inspired by Apple Notes on iOS – mobile-first, single column, like in the attached screenshot:
+
+
+Reference image: /mnt/data/IMG_7719.PNG
+
+
+This should be a separate page/screen so I can choose this layout later.
+Tech & structure
+
+
+Use the same stack as in this project (same framework, routing and styling approach).
+
+
+Create a new page/component, for example:
+
+
+NotesListView or AppleNotesStyleList
+
+
+
+
+Place it in a logical folder (src/pages/ or similar) and do not modify or break existing screens.
+
+
+Layout – like Apple Notes mobile
+The page is a single-column list of notes, grouped by time periods, similar to Apple Notes:
+
+
+Header area
+
+
+Top bar with title Notes (or the diary section name).
+
+
+Optional back button if needed by the existing navigation.
+
+
+Below it: a search field styled like iOS:
+
+
+Rounded rectangle, dark grey background.
+
+
+Placeholder text like “Search”.
+
+
+Minimal, calm look.
+
+
+
+
+
+
+Grouped sections
+
+
+Group notes into sections with headers, for example:
+
+
+Today
+
+
+Previous 7 Days
+
+
+Previous 30 Days
+
+
+Months like October, September, etc.
+
+
+
+
+Section headers are simple text labels with a bit of top margin.
+
+
+
+
+Note cards in the list
+
+
+Each note is a rounded pill/card on a dark background, similar to Apple Notes:
+
+
+Full-width minus horizontal padding.
+
+
+Slightly lighter than the page background.
+
+
+Soft shadow or subtle glow to feel “cushiony” but not too flashy.
+
+
+
+
+Inside each card:
+
+
+Title – first line of the entry (bold).
+
+
+Secondary line – time + short snippet, or “No additional text”.
+
+
+For example: 14:41  No additional text.
+
+
+
+
+
+
+Truncate long titles/snippets with ellipsis.
+
+
+On tap/press:
+
+
+Provide a visual feedback (slight scale, brighter background).
+
+
+Navigate to the existing entry detail screen if one already exists, or to a placeholder detail page for now.
+
+
+
+
+
+
+Bottom spacing
+
+
+Add safe-area padding at the bottom so the last cards are not hidden behind the system bar.
+
+
+
+
+Insights controls (Weekly / Monthly / Yearly)
+I also need insights buttons on this page:
+
+
+Place a small, elegant control near the top of the list, under the main Notes title but above the first section.
+
+
+Create a segmented control or 3 pill buttons:
+
+
+Weekly
+
+
+Monthly
+
+
+Yearly
+
+
+
+
+Style:
+
+
+Small, rounded pills.
+
+
+Calm, minimal outlines or filled state for the active one.
+
+
+
+
+Behavior:
+
+
+Clicking a pill changes the selected insight mode in state:
+
+
+selectedInsight = 'weekly' | 'monthly' | 'yearly'.
+
+
+
+
+Under the pills, show a simple placeholder block such as:
+
+
+“Weekly insight: coming soon…”
+
+
+“Monthly insight: most common tags, mood summary…”
+
+
+“Yearly insight: big-picture trends…”
+
+
+
+
+This insight block should be a soft, rounded panel that fits our dreamy, meditative style.
+
+
+
+
+Style & mood
+
+
+Dark theme with a soft gradient background (e.g. deep navy → muted purple), very subtle and not distracting.
+
+
+Minimal, clean, calm.
+
+
+Rounded corners and soft shadows for cards.
+
+
+Text color: off-white, easy on the eyes (not pure white).
+
+
+Animations should be gentle and slow if you add them.
+
+
+Navigation
+
+
+Expose this page via a clear route or export:
+
+
+For example, add a route like /notes-list (if the app uses a router) or export the component so I can wire it into navigation later.
+
+
+
+
+Keep all other screens unchanged; this is an alternative notes/entries index view.
+
+
+Please generate the full code for this new page (component + styles + basic state for section grouping and insight selection) so I can drop it into my project as a separate screen.

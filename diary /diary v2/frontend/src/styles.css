@@ -1,0 +1,95 @@
+/* Mobile-first base styles */
+:root {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #1d1d1f;
+  background-color: #f9fafb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  /* Mobile-first: prevent horizontal scroll */
+  overflow-x: hidden;
+  /* Ensure touch-friendly interactions */
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  cursor: pointer;
+}
+
+.app-shell {
+  /* Mobile-first: full width on small screens */
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  /* Mobile-friendly padding */
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Tablet and desktop: increase padding */
+@media (min-width: 768px) {
+  .app-shell {
+    padding: 2rem 1.5rem 4rem;
+  }
+}
+
+.panel {
+  background: white;
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+}
+
+.tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tag {
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  background: #eef2ff;
+  color: #312e81;
+  font-size: 0.85rem;
+}
+
+.record-actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.entry-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.entry-card {
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  background: #fff;
+}
+
+.calendar-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}

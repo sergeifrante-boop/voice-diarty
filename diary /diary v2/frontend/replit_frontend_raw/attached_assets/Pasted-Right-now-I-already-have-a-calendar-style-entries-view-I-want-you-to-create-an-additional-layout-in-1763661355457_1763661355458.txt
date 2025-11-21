@@ -1,0 +1,133 @@
+Right now I already have a calendar-style entries view.
+I want you to create an additional layout inspired by Apple Notes – as a separate page/screen that I can later choose between.
+
+Tech & structure
+
+Use the same stack as in this project (same framework and styling approach).
+
+Create a new page/component, for example:
+
+AppleNotesLayout (or NotesSplitView)
+
+put it in a logical place like src/pages/ or src/components/pages/.
+
+Do not break or remove any existing pages – this is an alternative view.
+
+General idea
+
+The screen should work similar to Apple Notes on macOS:
+
+Left column (sidebar) – list of entries grouped by date/month.
+
+Right column – full view of the selected entry.
+
+The whole page should stay in the same style as the rest of my app:
+soft, slightly dreamy, minimal, calm, not noisy.
+
+Layout details
+
+1. Overall layout
+
+Two-column split view:
+
+Left sidebar: about 25–30% width on desktop, slide-in panel on mobile.
+
+Right pane: 70–75% width, main reading area.
+
+Use a full-height layout with subtle padding and rounded corners on cards where appropriate.
+
+2. Left sidebar – months and entries
+
+Make it visually reminiscent of Apple Notes, but in my style:
+
+Background: dark, slightly translucent panel over a subtle gradient.
+
+Group entries by date/month:
+
+Section headers like: “Today”, “September 2025”, “April 2025”, “2024”, “2023” etc.
+
+For each entry in the list:
+
+Show time (e.g. 14:41).
+
+Show first line as the title (bold).
+
+Optional small secondary line: “No additional text” or a short snippet.
+
+On hover/active:
+
+Slight glow or soft highlight (not too aggressive).
+
+Selected entry is clearly highlighted (e.g. pill/rounded rectangle, slightly brighter background).
+
+Add a very subtle divider between year groups.
+
+3. Right pane – selected entry
+
+Show the selected entry in a clean “diary page” style:
+
+At the top: date and time (e.g. 20 November 2025 at 14:41) in smaller, calmer text.
+
+Below: the diary text, large and easy to read, with generous line height.
+
+Keep the background dark but slightly lighter than the global background, like a reading surface.
+
+Typography:
+
+Bigger font size for the text (comfortable reading).
+
+Slightly warm white color, not pure #FFFFFF, to be easier on the eyes.
+
+The text block should feel like a page: good margins, subtle rounded corners if it’s in a card.
+
+Insights controls (Monthly / Weekly / Yearly)
+
+I also want insights buttons on this page:
+
+At the top of the right pane (above the entry text or in a top toolbar), add three pill-style buttons or a segmented control:
+
+Weekly insight
+
+Monthly insight
+
+Yearly insight
+
+Style:
+
+Small, soft pills with rounded corners.
+
+Calm hover/active states (slight glow or subtle inner shadow).
+
+Behavior:
+
+For now, it’s enough if clicking each button shows a placeholder area under the header or a side panel with dummy content such as:
+
+“Weekly insight: coming soon…”
+
+“Monthly insight: most common tags, mood summary, word count…”
+
+“Yearly insight: big-picture trends…”
+
+Implement this with simple state, e.g. selectedInsight = 'weekly' | 'monthly' | 'yearly'.
+
+Style & mood
+
+Overall vibe:
+
+Meditative, dreamy, cozy, not corporate.
+
+Dark theme with soft gradients (e.g. deep navy → muted purple) and very subtle motion if you want (tiny floating particle background is ok).
+
+No hard edges: use rounded corners, soft shadows, and smooth transitions.
+
+Keep everything clean and minimal, avoid clutter.
+
+Navigation
+
+Expose this page in a way that I can easily navigate to it:
+
+For example, add a route /notes-split (if using a router) or export the component clearly so I can wire it later.
+
+If you adjust routing, don’t change the existing calendar screen logic – just add this new variant.
+
+Finally, please generate the full code for this page (component, styles, and any necessary minimal state logic) so I can copy it as a standalone screen into my project.
