@@ -13,13 +13,13 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"), // Path alias for @/ imports
+      "@": path.resolve(__dirname, "./src"),
     },
     extensions: [".tsx", ".ts", ".jsx", ".js", ".json"],
   },
   server: {
     port: 5173,
-    // Allow access from mobile devices on the same network
     host: "0.0.0.0",
+    allowedHosts: true,
   },
 });
